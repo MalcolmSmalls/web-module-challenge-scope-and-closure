@@ -28,11 +28,13 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  Counter1 uses nested functions which means it has an outerfunction and an innerfunction. Counter2 only has one function and a global variable.
   
   2. Which of the two uses a closure? How can you tell?
+  They both use closure. Counter2 reaches outside the function to the global scope to use count. Counter1 has a nested function that reaches outwards to the parent function to use count.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  The count in counter1 can only be accessed inside the function, so it cannot be changed which makes it more preferred during this scenario. Co
 */
 
 // counter1 code
@@ -62,10 +64,9 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 3)
 }
-
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
